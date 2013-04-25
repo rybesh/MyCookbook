@@ -1,31 +1,47 @@
 <!DOCTYPE html>
 <html>
-<meta charset="UTF-8">
-<title>My Cookbook: {recipe title}</title>
-<span class="URI"> www.mycookbook.com/recipea </span> <br>
-<a href="www.mycookbook.com/" rel="http://www.mycookbook.com/all-recipes"> Click here to view all recipes. </a> <br>
-<a href="www.mycookbook.com/meal" rel="http://www.mycookbook.com/meal" class="meal-type"> Click here to view recipes by meal type. </a> <br>
-<!--state transfer for searching for recipes-->
-<form method="get" action="www.mycookbook.com/search/" class="recipe-search">
-  <label> Search:</label>
-  <input type="text" name="search" value="Enter Search Terms Here" required />
-  <input type="submit" value="send"/>
-</form>
-<span class="recipe-title"> Recipe Title </span> <br>
-<span class="meal-type"> Meal Type </span> <br>
-<span class="description"> Description of recipe. </span> <br>
-<span class="author"> by: Author's Name </span> <br>
-<span class="date"> Date Recipe Published </span> <br>
-<span class="time"> Time takes to make recipe </span> <br>
-<span class="yields"> Number of servings yielded. </span> <br>
-<span class="ingredient">Ingredient A </span> <br>
-<span class="ingredient">Ingredient B </span> <br>
-<span class="ingredient">Ingredient C </span> <br>
-<span class="ingredient">Ingredient E </span> <br>
-<span class="ingredient">Ingredient F </span> <br>
-<span class="ingredient">Ingredient G </span> <br>
-<span class="ingredient">Ingredient H </span> <br>
-<span class="ingredient">Ingredient I </span> <br>
-<span class="ingredient">Ingredient J </span> <br>
-<span class="instructions">Instructions </span>
+  <head>
+    <title>My Cookbook <%=item.name%></title>
+    <link rel="stylesheet" href="/style.css">
+  </head>
+  <body>
+    <a href="/"><h1>Recipe Profile</h1></a>
+    <dl>
+      <dd><%=item.name%></dd>
+      <dt>Party</dt>
+      <dd><a href="/recipes/<%=item.recipe%>"><%=item.recipe%></a></dd>
+      <% if (item.image) { %>
+      <dt>Image URL</dt>
+      <dd><img src="<%=item.image%>" alt="<%=item.name%>"></dd>
+      <% } %>
+    </dl>
+    <div class="control">
+      <h2>Add Recipe</h2>
+      <form method="post" action="/recipes/<%=item._id%>">
+        <input type="hidden" name="_method" value="put">
+        <!-- The line above tells the server to treat this as a PUT request. -->
+        <label>Name: 
+          <input name="item[name]" value="<%=item.name%>" type="text" required>
+        </label>
+         <label>Image URL:
+          <input name="item[image]" value="<%=item.image%>" type="url" size="80"> 
+        </label>
+        <label>Cook Name: 
+          <input name="item[name]" value="<%=item.name%>" type="text" required>
+        </label>
+        <label>Ingredients: 
+          <input name="item[name]" value="<%=item.name%>" type="text" required>
+        </label>
+        <label>Directions: 
+          <input name="item[name]" value="<%=item.name%>" type="text" required>
+        </label>
+        
+      
+        <button>Update</button>
+      </form>
+    </div>
+  </body>
 </html>
+<!-- add an 'add a recipe' show/hide part for adding do that for both pages -->
+<!-- create text-box ingredient field-->
+<!-- img, cooktime, directions, ingredients-->
