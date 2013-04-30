@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>My Cookbook: Recipes</title>
+    <link rel="stylesheet" href="/style.css">
+  </head>
+  <body>
+    <!--filter form by meal or dish or search -->
+    <div>
+      <form method="get" action="/recipes/">
+        <select name="meals">
+          <option value="breakfast">Breakfast</option> <!--a href="/recipes/meals/breakfast/"-->
+          <option value="lunch">Lunch</option> <!--a href="/recipes/meals/lunch/"-->
+          <option value="dinner">Dinner</option> <!--a href="/recipes/meals/dinner/"-->
+          <option value="appetizer">Appetizers</option> <!--a href="/recipes/meals/appetizers/"-->
+          <option value="snack">Snacks</option> <!--a href="/recipes/meals/snacks/"-->
+        </select>
+        
+        <select name="dish">
+          <option value="soups">Soups & Stews</option> <!--a href="/recipes/dish/soups/"-->
+          <option value="cakes">Cakes</option> <!--a href="/recipes/dish/cakes/"-->
+          <option value="breads">Breads & Sandwiches</option> <!--a href="/recipes/dish/breads/"-->
+          <option value="italian">Italian</option>     <!--a href="/recipes/dish/italian/"-->
+        </select>
+        <input type="text" placeholder="Search recipes" name="search"><input type="submit" value="Search">
+      </form>
+    </div>
+    
+    <div id="recipe-list-container">
+      <% if (items.length > 0) { %>
+        <% items.forEach(function(item) { %>
+      <section class="recipe-container">
+        <div class="recipe-components">
+          <a href="/recipes/<%=item._id%>"><img class="recipe-img" src="<%=item.image%>" alt="<%=item.name%>"></a><br>
+          <div class="recipe-meta">
+            <h1 class="recipe-name"><a href="/recipes/<%=item._id%>"><%=item.name%></a></h1> <!--recipe name-->
+            <h1 class="cook-name"><a href="/cooks/<%=item._id%>"><%=item.name%></a></h1> <!--cook name -->
+          </div>
+        </div>
+      </section>
+        <% }); %>
+      <% } else { %>
+      <div>No recipes found.</div>
+      <% } %>
+    </div>
+    
+    
+    <div class="control">
+      <h2>Add or update a new recipe.</h2>
+      <script>
+      function onFormSubmit(form) {
+        form.action = form.action + form.elements['item[id]'].value;
+        console.log(form.action);
+        return true;
+      } 
+      </script>
+      <form method="post" action="/recipes/"
+            onsubmit="return onFormSubmit(this);">
+        <!-- The line above dynamically sets the PUT destination when the -->
+        <!-- form is submitted. -------------------------------------------->
+        <input type="hidden" name="_method" value="put">
+        <!-- The line above tells the server to treat this as a PUT request. -->
+        <label>Recipe ID<br>
+          (lowercase letters only, no spaces):
+          <input name="item[id]" type="text" pattern="[a-z]+" required
+                 placeholder="green">
+        </label>
+        <label>Recipe name: 
+          <input name="item[name]" type="text" required
+                 placeholder="The Green Party">
+        </label>
+        <label>Party description:
+          <textarea name="item[description]" cols="80" rows="10" 
+                    placeholder="The Green Party of the United States of America emphasizes environmentalism, non-hierarchical participatory democracy, social justice, respect for diversity, peace and nonviolence."
+          ></textarea>
+        </label>
+        <button>Add or update</button>
+      </form>
+    </div>
+  </body>
+</html>

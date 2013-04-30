@@ -15,6 +15,8 @@
       <dd><img src="<%=item.image%>" alt="<%=item.name%>"></dd>
       <% } %>
     </dl>
+    
+    <!-- hide the following div with a link to open it -->
     <div class="control">
       <h2>Add Recipe</h2>
       <form method="post" action="/recipes/<%=item._id%>">

@@ -1,22 +1,31 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Election Data: Parties</title>
+    <title>My Cookbook: Recipes</title>
     <link rel="stylesheet" href="/style.css">
   </head>
   <body>
-    <a href="/"><h1>Election Data</h1></a>
+    <form method="get" action="/recipes/">
+      <select name="meals">
+        <option value="breakfast">Breakfast</option>
+        <option value="lunch">Lunch</option>
+        <option value="dinner">Dinner</option>
+        <option value="appetizer">Appetizers</option>
+        <option value="snack">Snacks</option>
+      </select>
+    </form>
+    <a href="/"><h1>Recipe List</h1></a>
     <% if (items.length > 0) { %>
     <ul>
       <% items.forEach(function(item) { %>
-      <li><a href="/parties/<%=item._id%>"><%=item.name%></a></li>
+      <li><a href="/recipes/<%=item._id%>"><%=item.name%></a></li>
       <% }); %>
     </ul>
     <% } else { %>
     <div>No parties have been added.</div>
     <% } %>
     <div class="control">
-      <h2>Add or update a new political party</h2>
+      <h2>Add or update a new recipe.</h2>
       <script>
       function onFormSubmit(form) {
         form.action = form.action + form.elements['item[id]'].value;
@@ -24,18 +33,18 @@
         return true;
       } 
       </script>
-      <form method="post" action="/parties/"
+      <form method="post" action="/recipes/"
             onsubmit="return onFormSubmit(this);">
         <!-- The line above dynamically sets the PUT destination when the -->
         <!-- form is submitted. -------------------------------------------->
         <input type="hidden" name="_method" value="put">
         <!-- The line above tells the server to treat this as a PUT request. -->
-        <label>Party ID<br>
+        <label>Recipe ID<br>
           (lowercase letters only, no spaces):
           <input name="item[id]" type="text" pattern="[a-z]+" required
                  placeholder="green">
         </label>
-        <label>Party name: 
+        <label>Recipe name: 
           <input name="item[name]" type="text" required
                  placeholder="The Green Party">
         </label>
