@@ -40,7 +40,7 @@ app.put('/recipes/:id',      // TODO: change to suit your URI design.
     // See the form in `views/list-parties.ejs`.
     var item = req.body.item;
     
-    item.type = 'party'; // TODO: change to the type of item you want
+    item.type = 'recipes'; // TODO: change to the type of item you want
 
     // Save the new item to the database, specifying the ID.
     db.save(item_id, item, function(err) {
@@ -56,12 +56,12 @@ app.put('/recipes/:id',      // TODO: change to suit your URI design.
 
 ////////////////////////////////////////////////////////////////////////////////
 // Example of handling GET of a "collection" resource. /////////////////////////
-// Here we list all items of type `party`. /////////////////////////////////////
+// Here we list all items of type `recipe`. /////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////
 app.get('/recipes/',         // TODO: change to suit your URI design. 
   function(req, res) {
 
-    var item_type = 'party'; // TODO: change to the type of item you want.
+    var item_type = 'recipes'; // TODO: change to the type of item you want.
 
     // Get all items of the specified type from the database.
     db.getAll(item_type, function(err, items) {
@@ -91,7 +91,7 @@ app.post('/cooks/', // TODO: change to suit your URI design.
     // See the form in `views/one-party.ejs`.
     var item = req.body.item;
 
-    item.type = 'cook'; // TODO: change to the type of item you want
+    item.type = 'cooks'; // TODO: change to the type of item you want
 
     // Save the new item to the database. (No ID specified, it will be created.)
     db.save(item, function(err) {
@@ -119,7 +119,7 @@ app.put('/cooks/:id', // TODO: change to suit your URI design.
     // See the form in `views/one-candidate.ejs`.
     var item = req.body.item;
 
-    item.type = 'cook'; // TODO: change to the type of item you want
+    item.type = 'cooks'; // TODO: change to the type of item you want
 
     // Save the new item to the database, specifying the ID.
     db.save(item_id, item, function(err) {
@@ -137,10 +137,10 @@ app.put('/cooks/:id', // TODO: change to suit your URI design.
 // Another example of handling GET of a "collection" resource. /////////////////
 // This time we support filtering the list by some criteria (i.e. searching). //
 ////////////////////////////////////////////////////////////////////////////////
-app.get('/candidates/',          // TODO: change to suit your URI design. 
+app.get('/recipes/',          // TODO: change to suit your URI design. 
   function(req, res) {
 
-    var item_type = 'candidate'; // TODO: change to the type of item you want.
+    var item_type = 'recipes'; // TODO: change to the type of item you want.
 
     // Get items of the specified type that match the query.
     db.getSome(item_type, req.query, function(err, items) {
@@ -151,7 +151,7 @@ app.get('/candidates/',          // TODO: change to suit your URI design.
       // Otherwise, use the returned data to render an HTML page.
       else {
         res.render(
-          'list-candidates', // TODO: change to the name of your HTML template.
+          'list-recipes', // TODO: change to the name of your HTML template.
           { items: items }
         );
       }
@@ -164,10 +164,10 @@ app.get('/candidates/',          // TODO: change to suit your URI design.
 // This handler is more complicated, because we want to show not only the //////
 // item requested, but also links to a set of related items. ///////////////////
 ////////////////////////////////////////////////////////////////////////////////
-app.get('/parties/:id',      // TODO: change to suit your URI design.
+app.get('/cooks/:id',      // TODO: change to suit your URI design.
   function(req, res) {
 
-    var item_type = 'party'; // TODO: change to the type of item you want.
+    var item_type = 'cooks'; // TODO: change to the type of item you want.
 
     // Get the item ID from the URI.
     var item_id = req.params.id;
@@ -184,10 +184,10 @@ app.get('/parties/:id',      // TODO: change to suit your URI design.
       // Otherwise, get the related items associated with this item.
       else {
         
-        var related_type = 'candidate'; // TODO: change to type of related item.
+        var related_type = 'recipes'; // TODO: change to type of related item.
 
         // Set our query to find the items related to the requested item.
-        req.query.party = item_id; // TODO: change `party` to reflect the
+        req.query.cooks = item_id; // TODO: change `party` to reflect the
                                    // relation between the item fetched above
                                    // and the related items to be fetched below.
 
@@ -200,7 +200,7 @@ app.get('/parties/:id',      // TODO: change to suit your URI design.
           // Otherwise, use the returned data to render an HTML page.
           else {
             res.render(
-            'one-party', // TODO: change to the name of your HTML template.
+            'one-cook', // TODO: change to the name of your HTML template.
               { item: item, related_items: items }
             );
           }
@@ -216,10 +216,11 @@ app.get('/parties/:id',      // TODO: change to suit your URI design.
 // item requested, but also a list of potential related items, so that users ///
 // can select from a list when updating the item. //////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////
-app.get('/candidates/:id',       // TODO: change to suit your URI design.
+//Not sure if we need this function for our project!!
+app.get('/recipes/:id',       // TODO: change to suit your URI design.
   function(req, res) {
 
-    var item_type = 'candidate'; // TODO: change to the type of item you want.
+    var item_type = 'recipes'; // TODO: change to the type of item you want.
 
     // Get the item ID from the URI.
     var item_id = req.params.id;
@@ -236,7 +237,7 @@ app.get('/candidates/:id',       // TODO: change to suit your URI design.
       // Otherwise, get the items potentially related to this item.
       else {
         
-        var related_type = 'party'; // TODO: change to type of related item.
+        var related_type = 'cooks'; // TODO: change to type of related item.
 
         // Get all items of the specified related type.
         db.getAll(related_type, function(err, items) {
@@ -247,7 +248,7 @@ app.get('/candidates/:id',       // TODO: change to suit your URI design.
           // Otherwise, use the returned data to render an HTML page.
           else {
             res.render(
-              'one-candidate', // TODO: change to name of your HTML template.
+              'one-recipe', // TODO: change to name of your HTML template.
               { item: item, related_items: items }
             );
           }
