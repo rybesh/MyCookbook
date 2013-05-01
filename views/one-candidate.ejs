@@ -10,11 +10,16 @@
       <dt>Recipe Name</dt>
       <dd><%=item.name%></dd>
       <dt>Cook</dt>
-      <dd><a href="/cooks/<%=item.cook%>"><%=item.cook%></a></dd>
+      <dd><a href="/cooks/<%=item.cookname%>"><%=item.cookname%></a></dd>
       <% if (item.image) { %>
       <dt>Image URL</dt>
-      <dd><img src="<%=item.image%>" alt="<%=item.name%>"></dd>
+      <dd><img src="<%=item.image%>" alt="<%=item.image%>"></dd>
       <% } %>
+      <dt>Cook Time</dt>
+      <dd><%=item.cooktime%></dd>
+      <dt>Ingredient</dt>
+      <dd><%=item.name%></dd>
+      
     </dl>
     <div class="control">
       <h2>Update Recipe</h2>
