@@ -1,3 +1,44 @@
+.site-title {
+    font-size: 2em;
+    font-weight:bold;   
+    font-family:garamond, serif;
+}
+.inline {
+    display:inline; 
+}
+.search {
+    margin-left: 40%;
+}
+#filters {
+    text-align:left;
+    margin: 0 0 15px 0;
+    padding: 0 0 15px 0;
+    border: 1px blue solid;
+    height:auto;
+}
+#sortby {
+    margin:5px;
+}
+#recipe-list-container {
+    margin: 5px;
+    border: 1px solid red;
+    padding: 15px;
+}
+.recipe-container {
+    
+}
+.recipe-components {
+    
+}
+.recipe-components:ul {
+    
+}
+
+
+
+body {
+    font-family:garamond, serif;
+}
 .control {
   border: 1px solid gray;
   margin: 30px 10px 10px;
