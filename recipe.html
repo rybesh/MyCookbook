@@ -17,33 +17,7 @@
     </dl>
     
     <!-- hide the following div with a link to open it -->
-    <div class="control">
-      <h2>Add Recipe</h2>
-      <form method="post" action="/recipes/<%=item._id%>">
-        <input type="hidden" name="_method" value="put">
-        <!-- The line above tells the server to treat this as a PUT request. -->
-             <label>Ingredients: 
-          <input name="item[image]" value="<%=item.name%>" type="text" required>
-        </label>
-       <label>Name: 
-          <input name="item[cookTime]" value="<%=item.name%>" type="text" required>
-        </label>
-         <label>Image URL:
-          <input name="item[ingredient]" value="<%=item.image%>" type="url" size="80"> 
-        </label>
-        <label>Cook Name: 
-          <input name="item[directions]" value="<%=item.name%>" type="text" required>
-        </label>
-        <label>Directions: 
-          <input name="item[meal]" value="<%=item.name%>" type="text" required>
-        </label>
-        <label>Directions: 
-          <input name="item[dish]" value="<%=item.name%>" type="text" required>
-        </label>   
-      
-        <button>Update</button>
-      </form>
-    </div>
+ 
   </body>
 </html>
 <!-- add an 'add a recipe' show/hide part for adding do that for both pages -->
