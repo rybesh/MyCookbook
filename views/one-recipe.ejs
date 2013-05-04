@@ -7,13 +7,14 @@
   <body>
     <a href="/"><h1>Home</h1></a>
     <dl>
-      <dt>Recipe Name</dt>
+      <div itemscope=itemtype="http://schema.org/Recipe">
+      <dt><span itemprop="name">Recipe Name</span></dt>
       <dd><%=item.name%></dd>
-      <dt>Cook</dt>
+      <dt><span itemprop="author">Cook</span></dt>
       <dd><a href="/cooks/<%=item.cook%>"><%=item.cook%></a></dd>
       <% if (item.image) { %>
       <dt>Image URL</dt>
-      <dd><img src="<%=item.image%>" alt="<%=item.image%>"></dd>
+      <dd><img itemprop="image" src="<%=item.image%>" alt="<%=item.image%>"></dd>
       <% } %>
       <dt>Cook Time</dt>
       <dd><%=item.cooktime%></dd>
