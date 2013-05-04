@@ -81,6 +81,31 @@ app.get('/recipes/',         // TODO: change to suit your URI design.
 );
 
 ////////////////////////////////////////////////////////////////////////////////
+// Example of handling GET of a "collection" resource. /////////////////////////
+// Here we list all items of type `recipe`. /////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+app.get('/cooks/',         // TODO: change to suit your URI design. 
+  function(req, res) {
+
+    var item_type = 'cooks'; // TODO: change to the type of item you want.
+
+    // Get all items of the specified type from the database.
+    db.getAll(item_type, function(err, items) {
+
+      // If there was a database error, return an error status.
+      if (err) { res.send(err, 500); } 
+
+      // Otherwise, use the returned data to render an HTML page.
+      else {
+        res.render(
+          'list-cooks',   // TODO: change to the name of your HTML template.
+          { items: items }
+        );
+      }
+    });
+  }
+);
+////////////////////////////////////////////////////////////////////////////////
 // Example of handling POST to create a resource. //////////////////////////////
 // Here we create an item and allow the ID to be created automatically. ////////
 ////////////////////////////////////////////////////////////////////////////////
