@@ -1,51 +1,53 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Election Data: <%=item.name%></title>
+    <title>My Cookbook: <%=item.name%></title>
     <link rel="stylesheet" href="/style.css">
   </head>
   <body>
-    <a href="/"><h1>Election Data</h1></a>
+    <a href="/"><h1>Home</h1></a>
     <dl>
-      <dt>Party name</dt>
+      <dt>Cook name</dt>
       <dd><%=item.name%></dd>
       <% if (item.description) { %>
       <dt>Description</dt>
       <dd><%=item.description%></dd>
       <% } %>
-      <dt>Candidates</dt>
+      <dt>Recipes</dt>
       
       <dd>
         <% if (related_items.length > 0) { %>
         <ul>
           <% related_items.forEach(function(related_item) { %>
           <li>
-            <a href="/candidates/<%=related_item._id%>">
+            <a href="/recipes/<%=related_item._id%>">
               <%=related_item.name%>
             </a>
           </li>
           <% }); %>
         </ul>
         <% } else { %>
-        No candidates have been added to this party.
+        No recipes have been added for this cook.
         <% } %>
       </dd>
     </dl>
     <div class="control">
-      <h2>Add a new candidate</h2>
-      <form id="create-candidate" method="post" action="/candidates/">
-        <input type="hidden" name="item[party]" value="<%=item._id%>">
-        <!-- The line above links the candidate to be created to this party. -->
-        <label>Candidate name: 
+      <h2>Add a new recipes</h2>
+      <form id="create-recipe" method="post" action="/recipes/">
+        <input type="hidden" name="item[cook]" value="<%=item._id%>">
+        <!-- The line above links the recipe to be created to this cook. -->
+        <label>Recipe name: 
           <input name="item[name]" type="text" required
-                   placeholder="Ron Paul">
+                   placeholder="Blueberry Pancakesl">
         </label>
-        <label>Candidate image URL:
+        <label>Recipe image URL:
           <input name="item[image]" type="url" size="80"
-                   placeholder="http://www.ronpaul2012.com/wp-content/themes/ronpaul/images/bg-header.jpg">
+                   placeholder="http://www.example.jpg">
         </label>
         <button>Add</button>
       </form>
     </div>
   </body>
 </html>
+
+
