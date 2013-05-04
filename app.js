@@ -131,6 +131,31 @@ app.post('/cooks/', // TODO: change to suit your URI design.
 );
 
 ////////////////////////////////////////////////////////////////////////////////
+// Example of handling POST to create a resource. //////////////////////////////
+// Here we create an item and allow the ID to be created automatically. ////////
+////////////////////////////////////////////////////////////////////////////////
+app.post('/recipes/', // TODO: change to suit your URI design.
+  function(req, res) {
+  
+    // Get the item info that was POSTed from the input form.
+    // See the form in `views/one-party.ejs`.
+    var item = req.body.item;
+
+    item.type = 'recipes'; // TODO: change to the type of item you want
+
+    // Save the new item to the database. (No ID specified, it will be created.)
+    db.save(item, function(err) {
+
+      // If there was a database error, return an error status.
+      if (err) { res.send(err, 500); } 
+      
+      // Otherwise, redirect back to the URI from which the form was submitted.
+      else { res.redirect('back' ); }
+    });
+  }
+);
+
+////////////////////////////////////////////////////////////////////////////////
 // Another example of handling PUT to update a resource. ///////////////////////
 // Here we update an item using the ID specified in the URI. ///////////////////
 ////////////////////////////////////////////////////////////////////////////////

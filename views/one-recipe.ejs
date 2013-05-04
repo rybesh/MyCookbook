@@ -10,7 +10,7 @@
       <dt>Recipe Name</dt>
       <dd><%=item.name%></dd>
       <dt>Cook</dt>
-      <dd><a href="/cooks/<%=item.cookname%>"><%=item.cookname%></a></dd>
+      <dd><a href="/cooks/<%=item.cook%>"><%=item.cook%></a></dd>
       <% if (item.image) { %>
       <dt>Image URL</dt>
       <dd><img src="<%=item.image%>" alt="<%=item.image%>"></dd>
@@ -18,41 +18,39 @@
       <dt>Cook Time</dt>
       <dd><%=item.cooktime%></dd>
       <dt>Ingredient</dt>
-      <dd><%=item.ingredientse%></dd>
-      <dt>Directions</dt>
-      <dd><%=item.directions%>
+      <dd><%=item.name%></dd>
       
     </dl>
     <div class="control">
       <h2>Update Recipe</h2>
-      <form method="post" action="/recipes/<%=item._id%>">
+      <form method="put" action="/recipes/<%=item._id%>">
         <input type="hidden" name="_method" value="put">
         <!-- The line above tells the server to treat this as a PUT request. -->
-       <label>Recipe name: 
+label>Recipe name: 
           <input name="item[name]" type="text" required
                  placeholder="Blueberry Scones">
         </label>
          <label>Ingredients: <br>
             (One ingredient per line)
             <textarea name="item[ingredients]" cols="80" rows="30" 
-                    placeholder="1/2 sugar" required="required" value="<%=item.ingredients%>"></textarea>
+                    placeholder="1/2 sugar" required> </textarea>
         </label>
        <label>Cook Time: 
-          <input name="item[cookTime]" value="<%=item.cooktime%>" type="text" required>
+          <input name="item[cookTime]" type="text" required>
         </label>
          <label>Image URL:
-          <input name="item[image]" value="<%=item.image%>" type="url" size="80"> 
+          <input name="item[image]" type="url" size="80"> 
         </label>
-        <label>Name of cook: 
+        <!--<label>Name of cook: 
           <input name="item[cook]" value="<%=item.cookname%>" type="text" required>
-        </label>
+        </label> -->
         <label>Directions: <br>
             (Label each step with 1, 2, 3, etc. Start each step on a new line.)
             <textarea name="item[directions]" cols="80" rows="30" 
-                    placeholder="1. Pre-heat overn to 400 degrees." required="required"></textarea>
+                    placeholder="1. Pre-heat overn to 400 degrees." required></textarea>
         </label>
         
-        <select name="meals">
+        <select name="item[meals]" required>
           <option value="breakfast">Breakfast</option> <!--a href="/recipes/meals/breakfast/"-->
           <option value="lunch">Lunch</option> <!--a href="/recipes/meals/lunch/"-->
           <option value="dinner">Dinner</option> <!--a href="/recipes/meals/dinner/"-->
@@ -60,7 +58,7 @@
           <option value="snack">Snacks</option> <!--a href="/recipes/meals/snacks/"-->
         </select>
         
-        <select name="dish">
+        <select name="item[dish]" required>
           <option value="soups">Soups & Stews</option> <!--a href="/recipes/dish/soups/"-->
           <option value="cakes">Cakes</option> <!--a href="/recipes/dish/cakes/"-->
           <option value="breads">Breads & Sandwiches</option> <!--a href="/recipes/dish/breads/"-->
