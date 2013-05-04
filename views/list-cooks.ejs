@@ -1,31 +1,22 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>My Cookbook: Recipes</title>
+    <title>My Cookbook: Cooks</title>
     <link rel="stylesheet" href="/style.css">
   </head>
   <body>
-    <form method="get" action="/recipes/">
-      <select name="meals">
-        <option value="breakfast">Breakfast</option>
-        <option value="lunch">Lunch</option>
-        <option value="dinner">Dinner</option>
-        <option value="appetizer">Appetizers</option>
-        <option value="snack">Snacks</option>
-      </select>
-    </form>
-    <a href="/"><h1>Recipe List</h1></a>
+    <a href="/"><h1>Home</h1></a>
     <% if (items.length > 0) { %>
     <ul>
       <% items.forEach(function(item) { %>
-      <li><a href="/recipes/<%=item._id%>"><%=item.name%></a></li>
+      <li><a href="/cooks/<%=item._id%>"><%=item.name%></a></li>
       <% }); %>
     </ul>
     <% } else { %>
-    <div>No parties have been added.</div>
+    <div>No cooks have been added.</div>
     <% } %>
     <div class="control">
-      <h2>Add or update a new recipe.</h2>
+      <h2>Add or update a cook</h2>
       <script>
       function onFormSubmit(form) {
         form.action = form.action + form.elements['item[id]'].value;
@@ -33,24 +24,24 @@
         return true;
       } 
       </script>
-      <form method="post" action="/recipes/"
+      <form method="post" action="/cooks/"
             onsubmit="return onFormSubmit(this);">
         <!-- The line above dynamically sets the PUT destination when the -->
         <!-- form is submitted. -------------------------------------------->
         <input type="hidden" name="_method" value="put">
         <!-- The line above tells the server to treat this as a PUT request. -->
-        <label>Recipe ID<br>
+        <label>Cook ID<br>
           (lowercase letters only, no spaces):
           <input name="item[id]" type="text" pattern="[a-z]+" required
-                 placeholder="green">
+                 placeholder="JaneDoe">
         </label>
-        <label>Recipe name: 
+        <label>Cook name: 
           <input name="item[name]" type="text" required
-                 placeholder="The Green Party">
+                 placeholder="Jane Doe">
         </label>
         <label>Party description:
           <textarea name="item[description]" cols="80" rows="10" 
-                    placeholder="The Green Party of the United States of America emphasizes environmentalism, non-hierarchical participatory democracy, social justice, respect for diversity, peace and nonviolence."
+                    placeholder="Jane Doe is a cook who creates and shares recipes via her blog"
           ></textarea>
         </label>
         <button>Add or update</button>
