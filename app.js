@@ -237,7 +237,7 @@ app.get('/cooks/:id',      // TODO: change to suit your URI design.
         var related_type = 'recipes'; // TODO: change to type of related item.
 
         // Set our query to find the items related to the requested item.
-        req.query.cooks = item_id; // TODO: change `party` to reflect the
+        req.query.cook = item_id; // TODO: change `party` to reflect the
                                    // relation between the item fetched above
                                    // and the related items to be fetched below.
 
