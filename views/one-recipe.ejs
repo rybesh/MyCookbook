@@ -37,30 +37,30 @@
         <input type="hidden" name="_method" value="put">
         <!-- The line above tells the server to treat this as a PUT request. -->
   <label>Recipe name: 
-          <input name="item[name]" type="text" required
+          <input name="item[name]" type="text" 
                  placeholder="Blueberry Scones">
         </label>
          <label>Ingredients: <br>
             (One ingredient per line)
             <textarea name="item[ingredients]" cols="80" rows="30" 
-                    placeholder="1/2 sugar" required> </textarea>
+                    placeholder="1/2 sugar"> </textarea>
         </label>
        <label>Cook Time: 
-          <input name="item[cookTime]" type="text" required>
+          <input name="item[cookTime]" type="text" >
         </label>
          <label>Image URL:
           <input name="item[image]" type="url" size="80"> 
         </label>
         <!--<label>Name of cook: 
-          <input name="item[cook]" value="<%=item.cookname%>" type="text" required>
+          <input name="item[cook]" value="<%=item.cookname%>" type="text">
         </label> -->
         <label>Directions: <br>
             (Label each step with 1, 2, 3, etc. Start each step on a new line.)
             <textarea name="item[directions]" cols="80" rows="30" 
-                    placeholder="1. Pre-heat overn to 400 degrees." required></textarea>
+                    placeholder="1. Pre-heat overn to 400 degrees."></textarea>
         </label>
         
-        <select name="item[meals]" required>
+        <select name="item[meals]">
           <option value="breakfast">Breakfast</option> <!--a href="/recipes/meals/breakfast/"-->
           <option value="lunch">Lunch</option> <!--a href="/recipes/meals/lunch/"-->
           <option value="dinner">Dinner</option> <!--a href="/recipes/meals/dinner/"-->
@@ -68,7 +68,7 @@
           <option value="snack">Snacks</option> <!--a href="/recipes/meals/snacks/"-->
         </select>
         
-        <select name="item[dish]" required>
+        <select name="item[dish]">
           <option value="soups">Soups & Stews</option> <!--a href="/recipes/dish/soups/"-->
           <option value="cakes">Cakes</option> <!--a href="/recipes/dish/cakes/"-->
           <option value="breads">Breads & Sandwiches</option> <!--a href="/recipes/dish/breads/"-->
