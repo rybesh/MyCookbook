@@ -11,31 +11,6 @@
         
     </header>
     
-    <!--filter form by meal or dish or search -->
-    <div id="filters">
-      <form method="get" action="/recipes/">
-        <label type="text" class="inline" id="sortby">Sort by:</label>
-        <select name="meals" class="inline"> <!-- see one-candidate.ejs for form actions for a drop down-->
-            <option value="">Meal</option>
-            <option value="breakfast">Breakfast</option> <!--a href="/recipes/meals/breakfast/"-->
-            <option value="lunch">Lunch</option> <!--a href="/recipes/meals/lunch/"-->
-            <option value="dinner">Dinner</option> <!--a href="/recipes/meals/dinner/"-->
-            <option value="appetizer">Appetizers</option> <!--a href="/recipes/meals/appetizers/"-->
-            <option value="snack">Snacks</option> <!--a href="/recipes/meals/snacks/"-->
-        </select>
-        
-        <select name="dish" class="inline">
-            <option value="">Dish</option>
-            <option value="soups">Soups & Stews</option> <!--a href="/recipes/dish/soups/"-->
-            <option value="cakes">Cakes</option> <!--a href="/recipes/dish/cakes/"-->
-            <option value="breads">Breads & Sandwiches</option> <!--a href="/recipes/dish/breads/"-->
-            <option value="italian">Italian</option>     <!--a href="/recipes/dish/italian/"-->
-        </select>
-        <button class="inline">Filter Recipes</button>
-        <span class="search"><input type="text" placeholder="Search recipes" name="search" class="inline"><button class="inline">Search</button></span>
-      </form>
-    </div>
-    
     <div id="cook-button">
         <a href="/cooks/">View all cooks and add recipes</a>
     </div>
@@ -60,5 +35,10 @@
         </div>
       </section>
     </div>
+    <footer>
+        <div id="footer">
+            <p>Project by Daphne Zaborowski, Molly O'Dwyer and Amanda Joiner</p>
+            <p>Spring 2013, INLS 490: Web Information Organization</p>
+        </div>
   </body>
 </html>

@@ -54,3 +54,28 @@
         <button>Update</button>
       </form>
     </div>
+    
+    <!--filter form by meal or dish or search-->
+    <div id="filters">
+      <form method="get" action="/recipes/">
+        <label type="text" class="inline" id="sortby">Sort by:</label>
+        <select name="item[recipes]" class="inline"> <!-- see one-candidate.ejs for form actions for a drop down-->
+            <option value="">Meal</option>
+            <option value="breakfast">Breakfast</option> 
+            <option value="lunch">Lunch</option>
+            <option value="dinner">Dinner</option> 
+            <option value="appetizer">Appetizers</option>
+            <option value="snack">Snacks</option> 
+        </select>
+        
+      <!--  <select name="item[recipes]" class="inline">
+            <option value="">Dish</option>
+            <option value="soups">Soups & Stews</option> 
+            <option value="cakes">Cakes</option> 
+            <option value="breads">Breads & Sandwiches</option>
+            <option value="italian">Italian</option>    
+        </select>-->
+        <button class="inline">Filter Recipes</button>
+        <span class="search"><input type="text" placeholder="Search recipes" name="search" class="inline"><button class="inline">Search</button></span>
+      </form>
+    </div>
