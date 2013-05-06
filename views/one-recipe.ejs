@@ -5,7 +5,7 @@
     <link rel="stylesheet" href="/style.css">
   </head>
   <body>
-    <a href="/"><h1>Home</h1></a>
+    <a href="/"><h1>MyCookbook</h1></a>
     <dl>
       <div itemscope itemtype="http://schema.org/Recipe">
       <dt><span itemprop="name">Recipe Name</span></dt>
@@ -32,7 +32,7 @@
       <form method="put" action="/recipes/<%=item._id%>">
         <input type="hidden" name="_method" value="put">
         <!-- The line above tells the server to treat this as a PUT request. -->
-label>Recipe name: 
+  <label>Recipe name: 
           <input name="item[name]" type="text" required
                  placeholder="Blueberry Scones">
         </label>
