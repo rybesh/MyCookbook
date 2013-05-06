@@ -33,31 +33,31 @@
 
     <div class="control">
       <h2>Update Recipe</h2>
-      <form method="put" action="/recipes/<%=item._id%>">
+      <form method="post" action="/recipes/<%=item._id%>">
         <input type="hidden" name="_method" value="put">
         <!-- The line above tells the server to treat this as a PUT request. -->
   <label>Recipe name: 
-          <input name="item[name]" type="text" 
+          <input name="item[name]" type="text" required 
                  placeholder="Blueberry Scones">
         </label>
          <label>Ingredients: <br>
             (One ingredient per line)
             <textarea name="item[ingredients]" cols="40" rows="15" 
-                    placeholder="1/2 sugar"> </textarea>
+                    placeholder="1/2 sugar" required> </textarea>
         </label>
        <label>Cook Time: 
-          <input name="item[cookTime]" type="text" >
+          <input name="item[cookTime]" type="text" required>
         </label>
          <label>Image URL:
-          <input name="item[image]" type="url" size="80"> 
+          <input name="item[image]" type="url" size="80" required> 
         </label>
         <!--<label>Name of cook: 
-          <input name="item[cook]" value="<%=item.cookname%>" type="text">
+          <input name="item[cook]" value="<%=item.cookname%>" type="text" required>
         </label> -->
         <label>Directions: <br>
             (Label each step with 1, 2, 3, etc. Start each step on a new line.)
             <textarea name="item[directions]" cols="60" rows="15" 
-                    placeholder="1. Pre-heat overn to 400 degrees."></textarea>
+                    placeholder="1. Pre-heat overn to 400 degrees." required></textarea>
         </label>
         <button>Update</button>
       </form>
