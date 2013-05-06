@@ -6,7 +6,7 @@
   </head>
   <body>
     <header>
-        <h1 class="site-title">MyCookbook</h1>
+        <h1 class="site-title"><a href="/recipes/">MyCookbook</a></h1>
         <p class="site-subtitle">Store all your recipes in one place!</p>
         
     </header>
@@ -37,14 +37,14 @@
     </div>
     
     <div id="cook-button">
-        <form>
-            <input type="button" value="View all cooks and add recipes">
-        </form>
+        <a href="/cooks/">View all cooks and add recipes</a>
+    </div>
+    
     <div id="recipe-list-container">
       <section id="recipe-container">
         <div class="recipe-components">
             <% if (items.length > 0) { %>
-            <ul>
+            <ul class="recipe-list">
                 <% items.forEach(function(item) { %>  
                 <li><a href="/recipes/<%=item._id%>"><img class="recipe-img" src="<%=item.image%>" alt="<%=item.name%>"></a>
                     <div class="recipe-meta">

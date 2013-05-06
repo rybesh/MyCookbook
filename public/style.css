@@ -1,15 +1,32 @@
+header {
+    background-color:#d5d5aa;
+}
 .site-title {
     font-size: 2.5em;
     font-weight:bold;   
     font-family:Arial, sans-serif;
     margin:5px;
-    color:#084B78;
+}
+.site-title a {
+    color:#003366;
 }
 .site-subtitle {
     font-size: 1.3em;
-    color:#084B78;
+    color:#003366;
     margin-top:-5px;
     margin-left:5px;
+}
+#cook-button a {
+    background-color: #cccccc;
+    border: 3px #a5a5a5 solid;
+    font-size:1em;
+    font-weight:bold;
+    color: #003366;
+    padding: 10px;
+    border-radius:5px;
+}
+#cook-button a:hover {
+    color:#ffffff;
 }
 .inline {
     display:inline; 
@@ -21,7 +38,7 @@
     text-align:left;
     margin: 0 0 15px 0;
     padding: 0 0 15px 0;
-    border: 1px blue solid;
+    border: 1px solid #003366;
     height:auto;
 }
 #sortby {
@@ -29,20 +46,10 @@
 }
 #recipe-list-container {
     margin: 5px;
-    /*border:1px solid red;*/
     padding: 15px;
 }
-#recipe-container {
-    /*border:1px solid orange;*/
-}
-.recipe-components {
-  /*  border:1px solid purple;*/
-}
-.recipe-components:ul {
-    
-}
 .recipe-components:li {
-    border:1px solid black;
+    border:1px solid #003366;
 }
 .recipe-name {
     float:left;
@@ -55,8 +62,9 @@
     margin-top:0;
     margin-right:5px;
 }
-li {
-    background-color:#AFCADB;
+.recipe-list li {
+    /*background-color:#ddddbb; lighter version*/
+    background-color:#cccc99;
     border: 1px solid #084B78;
     list-style:none;
     width:360px;
@@ -65,26 +73,29 @@ li {
     border-radius: 15px;
     padding: 5px 10px;
 }
-li a {
+.recipe-list li a {
     text-decoration:none;
     font-size:0.9em;
-    color:#4D32AD;
+    color:#003366;
 }
-li a:hover {
-   color:#1D8C60;
+.recipe-list a:hover {
+   color:#ffffff;
 }
 .recipe-img {
     width:350px;
     height:350px;
     margin:5px 7px 5px 4px;
-    
     text-align:center;
-    border:1px solid #7D6D73;
+    border:1px solid #003366;
     border-radius:15px;
 }
 
 body {
     font-family:Arial, sans-serif;
+    background-color:#ffffff;
+}
+a {
+    text-decoration:none;
 }
 .control {
   border: 1px solid gray;
