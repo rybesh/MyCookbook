@@ -53,3 +53,12 @@
 {"ts":1367845312990,"patch":[[{"diffs":[[0,"    "],[-1,"vertical"],[1,"text"],[0,"-ali"]],"start1":758,"start2":758,"length1":16,"length2":12}]],"length":1181,"saved":false}
 {"ts":1367845346676,"patch":[[{"diffs":[[0,":5px"],[-1,";\n    margin-right:7px;"],[1," 7px 5px 3px;\n    "],[0,"\n   "]],"start1":730,"start2":730,"length1":31,"length2":26}]],"length":1176,"saved":false}
 {"ts":1367845384336,"patch":[[{"diffs":[[0,"7px 5px "],[-1,"3"],[1,"4"],[0,"px;\n    "]],"start1":735,"start2":735,"length1":17,"length2":17}]],"length":1176,"saved":false}
+{"ts":1367846189446,"patch":[[{"diffs":[[0,": 15px;\n"],[1,"    padding: 10px;\n"],[0,"}\nimg {\n"]],"start1":669,"start2":669,"length1":16,"length2":35}]],"length":1195,"saved":false}
+{"ts":1367846210213,"patch":[[{"diffs":[[0,"px;\n    padding:"],[1," 5px"],[0," 10px;\n}\nimg {\n "]],"start1":673,"start2":673,"length1":32,"length2":36}]],"length":1199,"saved":false}
+{"ts":1367846227174,"patch":[[{"diffs":[[0,"ft;\n    margin: "],[1,"1"],[0,"5px;\n    border-"]],"start1":631,"start2":631,"length1":32,"length2":33}]],"length":1200,"saved":false}
+{"ts":1367846265204,"patch":[[{"diffs":[[0,": 15px;\n"],[1,"    height:auto;\n"],[0,"}\n.recip"]],"start1":397,"start2":397,"length1":16,"length2":33}]],"length":1217,"saved":false}
+{"ts":1367846299887,"patch":[[{"diffs":[[0,": 15px;\n"],[-1,"    height:auto;\n"],[0,"}\n.recip"]],"start1":397,"start2":397,"length1":33,"length2":16}]],"length":1200,"saved":false}
+{"ts":1367846345796,"patch":[[{"diffs":[[0,"10px;\n}\n"],[1,"li a {\n    text-decoration:none;\n    font-size:1em;\n}\n"],[0,"img {\n  "]],"start1":695,"start2":695,"length1":16,"length2":70}]],"length":1254,"saved":false}
+{"ts":1367846393817,"patch":[[{"diffs":[[0,":1em;\n}\n"],[1,"li a:hover {\n   color:#4D32AD; \n}\n"],[0,"img {\n  "]],"start1":749,"start2":749,"length1":16,"length2":50}]],"length":1288,"saved":false}
+{"ts":1367846422738,"patch":[[{"diffs":[[0,"ze:1em;\n"],[1,"    color:#1D8C60;\n"],[0,"}\nli a:h"]],"start1":747,"start2":747,"length1":16,"length2":35}]],"length":1307,"saved":false}
+{"ts":1367846473428,"patch":[[{"diffs":[[0,"2AD; \n}\n"],[1,".recipe-"],[0,"img {\n  "]],"start1":802,"start2":802,"length1":16,"length2":24}]],"length":1315,"saved":false}
