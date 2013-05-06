@@ -1,7 +1,15 @@
 .site-title {
-    font-size: 2em;
+    font-size: 2.5em;
     font-weight:bold;   
-    font-family:garamond, serif;
+    font-family:Arial, sans-serif;
+    margin:5px;
+    color:#084B78;
+}
+.site-subtitle {
+    font-size: 1.3em;
+    color:#084B78;
+    margin-top:-5px;
+    margin-left:5px;
 }
 .inline {
     display:inline; 
@@ -21,14 +29,14 @@
 }
 #recipe-list-container {
     margin: 5px;
-    border: 1px solid red;
+    /*border:1px solid red;*/
     padding: 15px;
 }
-.recipe-container {
-    
+#recipe-container {
+    /*border:1px solid orange;*/
 }
 .recipe-components {
-    
+  /*  border:1px solid purple;*/
 }
 .recipe-components:ul {
     
@@ -36,8 +44,20 @@
 .recipe-components:li {
     border:1px solid black;
 }
+.recipe-name {
+    float:left;
+    margin-top:-5px;
+    margin-left:2px;
+}
+.cook-name {
+    float:right;
+    font-size:0.8em;
+    margin-top:0;
+    margin-right:5px;
+}
 li {
-    border: 1px solid black;
+    background-color:#AFCADB;
+    border: 1px solid #084B78;
     list-style:none;
     width:360px;
     float:left;
@@ -47,11 +67,11 @@ li {
 }
 li a {
     text-decoration:none;
-    font-size:1em;
-    color:#1D8C60;
+    font-size:0.9em;
+    color:#4D32AD;
 }
 li a:hover {
-   color:#4D32AD; 
+   color:#1D8C60;
 }
 .recipe-img {
     width:350px;
@@ -64,7 +84,7 @@ li a:hover {
 }
 
 body {
-    font-family:garamond, serif;
+    font-family:Arial, sans-serif;
 }
 .control {
   border: 1px solid gray;

@@ -7,7 +7,7 @@
   <body>
     <header>
         <h1 class="site-title">MyCookbook</h1>
-        <p>Store all your recipes in one place!</p>
+        <p class="site-subtitle">Store all your recipes in one place!</p>
         
     </header>
     
@@ -36,8 +36,12 @@
       </form>
     </div>
     
+    <div id="cook-button">
+        <form>
+            <input type="button" value="View all cooks and add recipes">
+        </form>
     <div id="recipe-list-container">
-      <section class="recipe-container">
+      <section id="recipe-container">
         <div class="recipe-components">
             <% if (items.length > 0) { %>
             <ul>
