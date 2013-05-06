@@ -81,31 +81,6 @@ app.get('/recipes/',         // TODO: change to suit your URI design.
 );
 
 ////////////////////////////////////////////////////////////////////////////////
-// Example of handling GET of a "collection" resource. /////////////////////////
-// Here we list all items of type `recipe`. /////////////////////////////////////
-////////////////////////////////////////////////////////////////////////////////
-app.get('/cooks/',         // TODO: change to suit your URI design. 
-  function(req, res) {
-
-    var item_type = 'cooks'; // TODO: change to the type of item you want.
-
-    // Get all items of the specified type from the database.
-    db.getAll(item_type, function(err, items) {
-
-      // If there was a database error, return an error status.
-      if (err) { res.send(err, 500); } 
-
-      // Otherwise, use the returned data to render an HTML page.
-      else {
-        res.render(
-          'list-cooks',   // TODO: change to the name of your HTML template.
-          { items: items }
-        );
-      }
-    });
-  }
-);
-////////////////////////////////////////////////////////////////////////////////
 // Example of handling POST to create a resource. //////////////////////////////
 // Here we create an item and allow the ID to be created automatically. ////////
 ////////////////////////////////////////////////////////////////////////////////
@@ -117,31 +92,6 @@ app.post('/cooks/', // TODO: change to suit your URI design.
     var item = req.body.item;
 
     item.type = 'cooks'; // TODO: change to the type of item you want
-
-    // Save the new item to the database. (No ID specified, it will be created.)
-    db.save(item, function(err) {
-
-      // If there was a database error, return an error status.
-      if (err) { res.send(err, 500); } 
-      
-      // Otherwise, redirect back to the URI from which the form was submitted.
-      else { res.redirect('back' ); }
-    });
-  }
-);
-
-////////////////////////////////////////////////////////////////////////////////
-// Example of handling POST to create a resource. //////////////////////////////
-// Here we create an item and allow the ID to be created automatically. ////////
-////////////////////////////////////////////////////////////////////////////////
-app.post('/recipes/', // TODO: change to suit your URI design.
-  function(req, res) {
-  
-    // Get the item info that was POSTed from the input form.
-    // See the form in `views/one-party.ejs`.
-    var item = req.body.item;
-
-    item.type = 'recipes'; // TODO: change to the type of item you want
 
     // Save the new item to the database. (No ID specified, it will be created.)
     db.save(item, function(err) {
@@ -208,6 +158,35 @@ app.get('/recipes/',          // TODO: change to suit your URI design.
     });
   }
 );
+
+////////////////////////////////////////////////////////////////////////////////
+// An example of handling GET of a "single" resource. //////////////////////////
+// This handler is more complicated, because we want to show not only the //////
+// item requested, but also links to a set of related items. ///////////////////
+////////////////////////////////////////////////////////////////////////////////
+app.get('/cooks/:id',      // TODO: change to suit your URI design.
+  function(req, res) {
+
+    var item_type = 'cooks'; // TODO: change to the type of item you want.
+
+    // Get the item ID from the URI.
+    var item_id = req.params.id;
+  
+    // Get one item of the specified type, identified by the item ID.
+    db.getOne(item_type, item_id, function(err, item) {
+        
+      // If there was a database error, return an error status.
+      if (err) {
+        if (err.error == 'not_found') { res.send(404); }
+        else { res.send(err, 500); }
+      } 
+
+      // Otherwise, get the related items associated with this item.
+      else {
+        
+        var related_type = 'recipes'; // TODO: change to type of related item.
+
+        // Set our query to find the items related to the requested item.
 
 ////////////////////////////////////////////////////////////////////////////////
 // An example of handling GET of a "single" resource. //////////////////////////
@@ -313,4 +292,4 @@ app.get('/recipes/:id',       // TODO: change to suit your URI design.
 app.get('/', function(req, res) { res.render('index'); });
 
 // Start listening for incoming HTTP connections.
-app.listen(process.env.PORT);
+app.listen(process.env.PORT); 

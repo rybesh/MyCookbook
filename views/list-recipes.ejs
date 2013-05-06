@@ -45,7 +45,7 @@
                 <li><a href="/recipes/<%=item._id%>"><img class="recipe-img" src="<%=item.image%>" alt="<%=item.name%>"></a>
                     <div class="recipe-meta">
                         <h1 class="recipe-name"><a href="/recipes/<%=item._id%>"><%=item.name%></a></h1> <!--recipe name-->
-                        <h1 class="cook-name"><a href="/cooks/<%=item._id%>"><%=item.name%></a></h1> <!--cook name -->
+                        <h1 class="cook-name"><a href="/cooks/<%=item.cook%>"><%=item.cook%></a></h1>
                     </div>
                 </li>
             <% }); %>
