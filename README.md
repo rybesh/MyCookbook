@@ -31,10 +31,11 @@ the recipe.ejs template.
 
 **Cooks Index**
 ``http://inlscookbook.herokuapp.com/cooks/`` - contains all the cooks; cook link will GET: ``http://inlscookbook.herokuapp.com/cooks/{name of cook}``. 
+The cooks index is represented by the list-cooks.ejs template.
 
 **Cook Profile**
 ``http://inlscookbook.herokuapp.com/cooks/{name of cook}`` - is the profile page for cook; links to their posted recipes 
-will be listed in the profile 
+will be listed in the profile. The cook profile is represented by the one-cook.ejs template.
    EX. ``http://inlscookbook.herokuapp.com/cooks/jane-doe``
 
 
