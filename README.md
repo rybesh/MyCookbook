@@ -51,6 +51,10 @@ Link to POST a new recipe will be coded into the template so it shows up on ever
 
 Attributes:
 -----------
+###Class Attributes
+###Name Attributes
+###Rel Attributes:
 
 Metadata:
 ---------
+The schema.org 'recipe' schema (http://schema.org/Recipe)  was used to embed microdata into the recipe templates.
