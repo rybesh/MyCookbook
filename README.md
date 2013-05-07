@@ -11,43 +11,28 @@ recipes such as: time to prepare, name of recipe, and dish type will be entered 
 Resource Templates:
 -------------------
 The My Cookbook API is constructed of two resources (cooks and recipes) that are represented by the following templates:
-all-recipes.ejs, all-cooks.ejs, one-recipe.ejs, and one-cook.ejs.
+list-recipes.ejs, list-cooks.ejs, one-recipe.ejs, one-cook.ejs and index.ejs.
    
-Root: 
-* www.mycookbook.com/ - home page, with links to view all recipes by meal, name, dish type; plus search function
-
-Resources:
-* www.mycookbook.com/recipes/ - contains all the recipes, listed alphebetically; recipe link will GET:
-* www.mycookbook.com/recipes/{recipe name}/{ID - optional} - original URI for a recipe
-       EX. www.mycookbook.com/recipes/blueberry-pancakes/1
-
-* www.mycookbook.com/cooks/ - contains all the cooks, listed alphabetically; cook link will GET:
-* www.mycookbook.com/cooks/{name of cook} - profile page for cook; links to their posted recipes will be listed here
-       EX. www.mycookbook.com/cooks/jane-doe
-
-* www.mycookbook.com/{category} - lists all the subtypes in the selected category; subtype link will GET:
-* www.mycookbook.com/{category}/{subtype} - lists all the recipes that are classified under subtype
-       EX. www.mycookbook.com/meal/breakfast
-       Recipe link here will GET: www.mycookbook.com/recipes/{recipe name}
-
-* www.mycookbook.com/recipes/q={search term 1}+{search term 2} - lists all recipes that match the search terms
-       EX. www.mycookbook.com/recipes/q=cream+cheese 
-OR
-* www.mycookbook.com/q={search term 1}+{search term 2} - lists all recipes that match the search terms
+**Splash Page**
+``http://inlscookbook.herokuapp.com/`` - takes you to the index.ejs page that prompts the user to enter the site. This page
+serves as an introduction and entrance to the My Cookbook API. The space page is represented by the index.ejs file.
 
 
-Recipes to use for this project:
+**Resources**
+``http://inlscookbook.herokuapp.com/recipes/`` - home page, with links to view all recipes by name as well as links
+to cooks who have authored the recipes listed on the page. This resource is represented by the list-recipes.ejs file. 
+The recipe link will GET ``http://inlscookbook.herokuapp.com/recipes/{recipe name}/{ID - optional}`` and the individual 
+cook link will GET ``http://inlscookbook.herokuapp.com/cooks/{name of cook}``. The button to add a new cook or recipe 
+will GET ``http:\\inlscookbook.herokuapp.com/cooks``
 
+``http://inlscookbook.herokuapp.com/recipes/{recipe name}/{ID - optional}`` - original URI for a recipe.
+   EX. ``http://inlscookbook.herokuapp.com/recipes/blueberry-pancakes/1``
 
-Subtypes of Meal to use for this project:
-* www.mycookbook.com/meal/dessert  (all desserts)
-* www.mycookbook.com/meal/dinner (all dinners)
+``http://inlscookbook.herokuapp.com/cooks/`` - contains all the cooks; cook link will GET: 
+``http://inlscookbook.herokuapp.com/cooks/{name of cook}`` - profile page for cook; links to their posted recipes 
+will be listed here
+   EX. www.mycookbook.com/cooks/jane-doe
 
-Subtypes of Dish to use for this project:
-* www.mycookbook.com/dish/pasta (all pasta dishes)
-* www.mycookbook.com/dish/soup (all soup dishes)
-
-Link to POST a new recipe will be coded into the template so it shows up on every page. Th action will POST to www.mycookbook.com/recipes. The search function will also be coded into the template.
 
 Attributes:
 -----------
