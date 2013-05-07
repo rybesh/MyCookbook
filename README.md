@@ -38,13 +38,6 @@ The cooks index is represented by the list-cooks.ejs template.
 will be listed in the profile. The cook profile is represented by the one-cook.ejs template.
    EX. ``http://inlscookbook.herokuapp.com/cooks/jane-doe``
 
-
-Attributes:
------------
-###Class Attributes
-###Name Attributes
-###Rel Attributes:
-
 Metadata:
 ---------
 The schema.org 'recipe' schema (http://schema.org/Recipe)  was used to embed microdata into the recipe templates.
