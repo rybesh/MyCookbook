@@ -31,7 +31,7 @@ will GET ``http:\\inlscookbook.herokuapp.com/cooks``
 ``http://inlscookbook.herokuapp.com/cooks/`` - contains all the cooks; cook link will GET: 
 ``http://inlscookbook.herokuapp.com/cooks/{name of cook}`` - profile page for cook; links to their posted recipes 
 will be listed here
-   EX. www.mycookbook.com/cooks/jane-doe
+   EX. ``http://inlscookbook.herokuapp.com/cooks/jane-doe``
 
 
 Attributes:
