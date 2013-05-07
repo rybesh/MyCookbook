@@ -65,20 +65,20 @@ The recipe schema was used in the one-recipe.ejs temple as follows:
       </div>
     </dl>
     
-The schema.org framework uses the following attributes:
-+ itemscope - indicates a new item
-+ itemtype - specifies the type
-+ itemprop - specifies the properties and values
+The **schema.org** framework uses the following attributes:
++ _itemscope_ - indicates a new item
++ _itemtype_ - specifies the type
++ _itemprop_ - specifies the properties and values
 
 
-The schema was referenced using 'itemscope' to indicate that a schema was going to be used and 'itemtype' was used to specify, by referencing the schema.org recipe URL, that the recipe schema was going to be used.
+The schema was referenced using **'itemscope'** to indicate that a schema was going to be used and **'itemtype'** was used to specify, by referencing the schema.org recipe URL, that the recipe schema was going to be used.
 
-Then itemprop was used to add the following recipe properties:
-+ name - 'the name of the item,' which in this case is the name of the recipe.
-+ author - 'the author of this content,' which in this case is the cook.
-+ image - 'URL of of an image of the item,' which in this case is the picture of the recipe.
-+ cookTime - 'The time it takes to actually cook the dish, in ISO 8601 duration format,' which fits well with our recipe data.
-+ recipeCategory - 'The category of the recipe—for example, appetizer, entree, etc.,' another piece of data we wanted to capture in our service.
-+ recipeCuisine - 'The cuisine of the recipe (for example, French or Ethopian),' which we instead used to describe the type of dish (cakes, breads, ets.)
-+ ingredients - 'An ingredient used in the recipe,' another essential piece of information about the recipes.
+Then **itemprop** was used to add the following recipe properties:
++ _name_ - 'the name of the item,' which in this case is the name of the recipe.
++ _author_ - 'the author of this content,' which in this case is the cook.
++ _image_ - 'URL of of an image of the item,' which in this case is the picture of the recipe.
++ _cookTime_ - 'The time it takes to actually cook the dish, in ISO 8601 duration format,' which fits well with our recipe data.
++ _recipeCategory_ - 'The category of the recipe—for example, appetizer, entree, etc.,' another piece of data we wanted to capture in our service.
++ _recipeCuisine_ - 'The cuisine of the recipe (for example, French or Ethopian),' which we instead used to describe the type of dish (cakes, breads, ets.)
++ _ingredients_ - 'An ingredient used in the recipe,' another essential piece of information about the recipes.
 = recipeInstructions  - 'The steps to make the dish,' which we referred to as "directions" in our service. 
