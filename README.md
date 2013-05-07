@@ -2,25 +2,13 @@ MyCookbook
 ==========
 
 Description of service:
-This data service will allow individuals interested in cooking to post their own recipes online or search other cooks' 
-recipes. Users can add new cooks cook profiles and add recipes for each cook. There are fields that are used to describe
-the cooks including the cook name and a description as well as information about recipes for example, time to prepare, 
-name of recipe, and dish type. 
+My Cookbook is a data service will allow individuals interested in cooking and baking to post their own recipes online 
+or search other cooks' recipes. Users can add new cook profiles and add recipes for each cook. Information used to
+describe the cooks includes the cook name and a description of the cook. When creating a new recipe, information about 
+recipes such as: time to prepare, name of recipe, and dish type will be entered using the add or update recipe form.
 
-Part II & III:
-Organization of data:
-> Recipes
-   >> Meal (category)
-     >>> Breakfast (subtype)
-     >>> Lunch
-     >>> Dinner
-     >>> Desserts
-     >>> Snacks
-     >>> Appetizers
-   >> Dish Type (category)
-     >>> Something (subtype)
-     >>> Something Else
-> Cooks
+The My Cookbook API is constructed of two resources (cooks and recipes) that are represented by the following templates:
+all-recipes.ejs, all-cooks.ejs, one-recipe.ejs, and one-cook.ejs.
    
 Root: 
 * www.mycookbook.com/ - home page, with links to view all recipes by meal, name, dish type; plus search function
